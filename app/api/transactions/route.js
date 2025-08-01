@@ -11,14 +11,29 @@ export async function GET() {
 export async function POST(req) {
   await connectDB();
   const data = await req.json();
-  const txn = await Transaction.create(data);
+
+  // Safely convert quantity to number
+  const quantity = Number(data.quantity);
+
+  // Create the transaction
+  const txn = await Transaction.create({
+    ...data,
+    quantity,
+  });
 
   const product = await Product.findById(data.productId);
-  if (data.type === 'purchase') {
-    product.quantity += data.quantity;
-  } else {
-    product.quantity -= data.quantity;
+  if (!product) {
+    return Response.json({ error: 'Product not found' }, { status: 404 });
   }
+
+  // Adjust product quantity correctly
+  if (data.type === 'purchase') {
+    product.quantity += quantity;
+  } else {
+    product.quantity -= quantity;
+  }
+
   await product.save();
+
   return Response.json(txn);
 }
