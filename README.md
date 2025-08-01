@@ -60,3 +60,12 @@ mini-erp-lite/
 
 
 
+
+
+🙌 Contributing
+Feel free to fork the repo and submit pull requests. Suggestions and feedback are welcome!
+
+✨ Author
+Developed with ❤️ by Anuusshhkkaa
+
+
