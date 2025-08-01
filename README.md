@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini ERP Lite
 
-## Getting Started
+A simple, full-stack ERP (Enterprise Resource Planning) web application built using **Next.js (App Router)**, **MongoDB**, and **Tailwind CSS**. It helps manage products, suppliers, and transactions efficiently with a clean, modern UI.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 📦 **Product Management**
+  - Create, update, delete, and view products
+  - Associate each product with a supplier
+  - Track quantity and price
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🧾 **Transaction Handling**
+  - Create purchase and sales transactions
+  - Automatically update product quantity
+  - View a full transaction list with timestamps
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🧍‍♂️ **Supplier Management**
+  - Add, edit, delete suppliers
+  - Assign suppliers to products
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 📊 **Dashboard Overview**
+  - View key stats at a glance (Products count, Suppliers count, Transaction summary)
 
-## Learn More
+- 🔄 **Responsive and Clean UI**
+  - Built with Tailwind CSS
+  - Component-based design for reusability
+  - Professional layout and form structure
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: Next.js 15+ (App Router), React 19, Tailwind CSS
+- **Backend**: API routes in Next.js, Mongoose ODM
+- **Database**: MongoDB Atlas (Cloud)
+- **State Management**: Form state using React Hook Form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗂️ Folder Structure
 
-## Deploy on Vercel
+mini-erp-lite/
+├── app/
+│ ├── products/
+│ ├── suppliers/
+│ ├── transactions/
+│ ├── layout.js
+│ └── page.js
+├── components/
+│ ├── ProductForm.jsx
+│ ├── SupplierForm.jsx
+│ └── TransactionForm.jsx
+├── lib/
+│ └── mongodb.js
+├── models/
+│ ├── Product.js
+│ ├── Supplier.js
+│ └── Transaction.js
+├── public/
+├── styles/
+│ └── globals.css
+├── .env.local
+└── README.md
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
